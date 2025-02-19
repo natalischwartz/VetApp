@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import db from './database/db.js'
+import adminRoutes from './routes/adminRoutes.js'
 
 dotenv.config(); // 👈 Carga las variables de entorno
 
@@ -13,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 //Routes
-
+app.use('/admin', adminRoutes)
 
 
 //chequeo conexion a la db
