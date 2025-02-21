@@ -1,0 +1,97 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-link-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    gap: var(--spacing-20);
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--dark-solid);
+    font-weight: bold;
+    font-size: var(--font-small);
+}
+
+.logo-container{
+    margin-left: var(--spacing-8);
+}
+
+.logo {
+   width: 20px;
+} 
+
+.active {
+    text-decoration: underline;
+}
+
+.botonNavNoLogin {
+    color: var(--primary-solid);
+    border-radius: 30px;
+    padding: var(--spacing-8) var(--spacing-20);
+    border: 3px solid var(--primary-solid);
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-weight: bold;
+}
+
+#botonRegistrate {
+    background-color: var(--primary-solid);
+    color: var(--light-font-solid);
+    padding-bottom: 13px;
+}
+
+#botonIngresar {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    padding-bottom: 13px;
+}
+
+.botonNavLogin {
+    color: green;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: 3px solid green;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-weight: bold;
+}
+
+#botonCerrarSesion {
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+/* .huellitas{
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-20);
+} */
+
+
+
+ .huellitas {
+    display: flex;
+    align-items: center;
+} 
+
+.texto-huellitas{
+    font-weight: bold;
+}
+
+@media screen and (max-width: 425px){
+    .nav-link-section{
+        flex-direction: column;
+    }
+}
