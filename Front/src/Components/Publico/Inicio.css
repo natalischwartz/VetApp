@@ -1,0 +1,133 @@
+.div_img_inicio{
+    background-image: linear-gradient(to left, #ff000000, rgb(63, 62, 62)), url(../../../public/images/hero-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 10% 45%;
+    font-family: var(--base-font);
+    width: 100%;
+    color: var(--light-font-solid);
+}
+
+.img_text_inicio{
+    width: 50%;
+    height: 560px;
+    font-size: var(--font-small);
+    padding-left: var(--spacing-20)
+}
+
+.titulo_inicio{
+    font-size: var(--font-xlarge);
+    margin-bottom: var(--spacing-24);
+}
+
+.parrafo_container{
+    transform: translateY(80%);
+}
+
+.parrafo_inicio{
+    font-size: var(--font-xsmall);
+}
+
+#btn-consulta-inicio {
+    font-size: var(--font-xsmall);
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: 3px solid white;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    margin-top: 10px;
+}
+
+#btn-consulta-inicio:hover {
+    background-color: var(--primary-solid);
+}
+
+/*Nuestros servicios*/
+
+#titulo_secundario_inicio {
+    margin:var(--spacing-28) 0;
+    font-size: var(--font-large);
+    font-weight: bold;
+    font-family: var(--base-font);
+    text-align: center;
+}
+
+.services_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-20);
+    font-family: var(--base-font);
+}
+
+.services_content{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;        
+    gap: 0.5rem;          
+    margin-top: 1rem;     
+    margin-bottom: 1rem;   
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); 
+    background-color: white;
+    width: 500px;
+    height: 360px; 
+    
+}
+
+.services_title{
+    margin-bottom: var(--spacing-20);
+}
+
+.services_img{
+    font-size: var(--font-xlarge);
+    text-align: center;
+    margin-top: var(--spacing-16);
+  }
+
+
+
+.services_description{
+    padding-bottom: var(--spacing-20);
+    padding-left: 10px;
+    padding-right: 10px;
+     
+}  
+
+
+
+
+
+@media screen and (max-width: 648px){
+
+    .div_img_inicio{
+        background-position: 50% 50%;
+    }
+
+    .img_text_inicio{
+        width: 100%;
+    }
+
+    .titulo_inicio{
+        font-size: var(--font-large);
+    }
+
+    .parrafo_container{
+        transform: translateY(65%);
+    }
+
+    .parrafo_inicio{
+        font-size: var(--font-small);
+    }
+
+    /*Nuestros servicios*/
+    .services_container{
+        flex-wrap: wrap;
+    }
+
+   
+}

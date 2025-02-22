@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
 :root { 
 
     /*PALETTE*/
@@ -23,8 +23,8 @@
     --light-font-solid: #FFFFFF;
 
     /*Typography*/
-    --base-font: "System-ui", sans-serif;
-    --alternative-font: "Helvetica", sans-serif;
+    --base-font: "Montserrat", sans-serif;
+    --alternative-font: "Quicksand", sans-serif;
 
     /*Font-sizes*/
     --font-display: 4.6em;
