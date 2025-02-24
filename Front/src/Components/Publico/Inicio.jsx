@@ -6,12 +6,12 @@ const Inicio = () => {
     <>
       <div className="div_img_inicio">
         <div className="img_text_inicio">
-          <h1 className="titulo_inicio">Tu mascota, nuestra prioridad</h1>
+          <h1 className="titulo_inicio">Tu mascota,<br/> nuestra prioridad</h1>
 
           <div className="parrafo_container">
             <p className="parrafo_inicio">
-              Clínica veterinaria integral, líderes en atención especializada
-              para tu mascota. Agenda tu consulta hoy mismo.
+              Clínica veterinaria integral, líderes en atención <br/> especializada
+              para tu mascota.<br/> Agenda tu consulta hoy mismo.
             </p>
 
             <div>

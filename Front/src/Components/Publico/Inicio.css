@@ -1,5 +1,5 @@
 .div_img_inicio{
-    background-image: linear-gradient(to left, #ff000000, rgb(63, 62, 62)), url(../../../public/images/hero-2.jpg);
+    background-image: linear-gradient(to top right, rgba(63, 62, 62, 0.8) 4%, rgba(63, 62, 62, 0) 107%), url(/public/images/hero-2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 10% 45%;
@@ -12,7 +12,8 @@
     width: 50%;
     height: 560px;
     font-size: var(--font-small);
-    padding-left: var(--spacing-20)
+    padding-left: var(--spacing-20);
+    position: relative;
 }
 
 .titulo_inicio{
@@ -21,7 +22,9 @@
 }
 
 .parrafo_container{
-    transform: translateY(80%);
+    position: absolute;
+    top: 340px;
+    
 }
 
 .parrafo_inicio{
@@ -117,11 +120,12 @@
     }
 
     .parrafo_container{
-        transform: translateY(65%);
+        top: 360px;
     }
 
+
     .parrafo_inicio{
-        font-size: var(--font-small);
+        font-size: var(--font-xsmall);
     }
 
     /*Nuestros servicios*/

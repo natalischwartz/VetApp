@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Inicio from "./Components/Publico/Inicio.jsx";
 import Login from "./Components/AuthUsuarios/Login.jsx";
+import Registro from "./Components/AuthUsuarios/Registro.jsx";
 
 import "./index.css";
 import { AuthProvider } from "./firebaseConfig/AuthProvider.jsx";
@@ -22,7 +23,7 @@ createRoot(document.getElementById("root")).render(
               <Route path="/adopciones" element={<Adopciones/>}/>
               <Route path="/consultas" element={<Consultas/>}/> */}
               <Route path="/login" element={<Login />} />
-              {/* <Route path="/register" element={<Registro/>}/> */}
+              <Route path="/register" element={<Registro/>}/>
           </Route> 
         </Routes>
       </AuthProvider>
