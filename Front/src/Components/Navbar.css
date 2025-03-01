@@ -9,6 +9,11 @@
     font-family: var(--base-font);
     background-color: white;
 }
+
+.navbar-collapse{
+    flex-grow: 0;
+}
+
 .nav-link-section {
     display: flex;
     align-items: center;

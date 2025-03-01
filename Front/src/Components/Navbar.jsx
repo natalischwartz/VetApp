@@ -52,7 +52,7 @@ const LogInLinks = () =>{
 
 const Navbar = () => {
     return (
-        <nav className="navbar container navbar-expand-sm">
+        <nav className="navbar  navbar-expand-sm">
             {/* Logo */}
             <div className="logo-container">
             <NavLink to="/" className="nav-link nav-item huellitas">

@@ -92,7 +92,9 @@ img {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1200px; /*El elemento se ajustará al tamaño de la pantalla hasta un máximo de 1200px.*/
+    width: 100%;/*Permite que el contenedor sea flexible y se ajuste al tamaño de la pantalla si es menor a 1200px.*/
     margin: 0 auto;
+    padding:var(--spacing-20)
 
 }

@@ -1,0 +1,102 @@
+
+.oscurecer {
+    filter: brightness(55%);
+    width: 100%;
+    height: 500px;
+}
+
+.img-fluid {
+    width: 100%;
+    height: 488px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+/* .carousel-indicators{
+    bottom: 18%;
+} */
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    position: absolute;
+    bottom: 60%;
+}
+
+.carousel-item{
+    position: relative;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 3%;
+}
+
+.txt{
+    font-size: var(--font-small);
+    font-family: var(--alternative-font);
+    color: var(--light-font-solid);
+    font-weight: normal;
+}
+
+.txt-carousel{
+    font-size: clamp(16px,var(--font-medium),20px);
+    line-height: 2.5rem;
+}
+
+.logo{
+    height: 35px;
+}
+
+.section-title{
+    font-family: var(--alternative-font);
+    color: var(--dark-solid);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom:var(--spacing-20);
+    font-weight: bold;
+}
+
+.card-title, .card-text {
+    font-family: var(--alternative-font);
+    color: var(--dark-solid);
+    font-weight: bold;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-20)
+}
+
+.col{
+    flex: 1 1 250px;
+    max-width: 250px;
+    height: 340px;
+}
+
+
+.card {
+    /* display: block; */
+    width: 200px;
+    height: 340px;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 8px 4px #d3d3d3d4;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+}
+
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+} 
+
+.card-body{
+    padding: var(--spacing-16);
+}
