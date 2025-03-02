@@ -13,22 +13,10 @@ const LogInLinks = () =>{
     if(!isUserLoggedIn){
         return (
             <>
-                <NavLink to="/login" className="nav-link nav-item" onClick={() => {
-        const collapseElement = document.getElementById('navbarNav');
-        const bootstrapCollapse = new bootstrap.Collapse(collapseElement, {
-          toggle: false,
-        });
-        bootstrapCollapse.hide(); // Cierra el menú
-      }}>
+                <NavLink to="/login" className="nav-link nav-item">
                     <button id="botonIngresar" className="botonNavNoLogin">Ingresar</button>
                 </NavLink>
-                <NavLink to="/register" className="nav-link nav-item" onClick={() => {
-        const collapseElement = document.getElementById('navbarNav');
-        const bootstrapCollapse = new bootstrap.Collapse(collapseElement, {
-          toggle: false,
-        });
-        bootstrapCollapse.hide(); // Cierra el menú
-      }}>
+                <NavLink to="/register" className="nav-link nav-item">
                     <button id="botonRegistrate" className="botonNavNoLogin">Registrate</button>
                 </NavLink>
             </>
@@ -88,28 +76,10 @@ const Navbar = () => {
 
              {/* Links de navegación */}
             <div className="nav-link-section collapse navbar-collapse" id="navbarNav">
-                <NavLink to="/quienesSomos" className="nav-link nav-item" onClick={() => {
-        const collapseElement = document.getElementById('navbarNav');
-        const bootstrapCollapse = new bootstrap.Collapse(collapseElement, {
-          toggle: false,
-        });
-        bootstrapCollapse.hide(); // Cierra el menú
-      }}>Quiénes Somos</NavLink>
-                <NavLink to="/adopciones" className="nav-link nav-item" onClick={() => {
-        const collapseElement = document.getElementById('navbarNav');
-        const bootstrapCollapse = new bootstrap.Collapse(collapseElement, {
-          toggle: false,
-        });
-        bootstrapCollapse.hide(); // Cierra el menú
-      }}>Adopciones</NavLink>
+                <NavLink to="/quienesSomos" className="nav-link nav-item">Quiénes Somos</NavLink>
+                <NavLink to="/adopciones" className="nav-link nav-item">Adopciones</NavLink>
                 {/* <Link to="/" className="nav-link nav-item">Inicio</Link> */}
-                <NavLink to="/consultas" className="nav-link nav-item" onClick={() => {
-        const collapseElement = document.getElementById('navbarNav');
-        const bootstrapCollapse = new bootstrap.Collapse(collapseElement, {
-          toggle: false,
-        });
-        bootstrapCollapse.hide(); // Cierra el menú
-      }}>Consultas</NavLink>
+                <NavLink to="/consultas" className="nav-link nav-item">Consultas</NavLink>
                 <LogInLinks></LogInLinks>
                 <a href="https://www.instagram.com/" target="_blank" style={{ color: "black", paddingRight: "10px" }}></a>
                 <a href="https://es-la.facebook.com/" target="_blank" style={{ color: "black", paddingRight: "10px" }}></a>
