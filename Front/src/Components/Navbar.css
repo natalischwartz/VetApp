@@ -53,13 +53,13 @@
 #botonRegistrate {
     background-color: var(--primary-solid);
     color: var(--light-font-solid);
-    padding-bottom: 13px;
+    /* padding-bottom: 13px; */
 }
 
 #botonIngresar {
     background-color: transparent;
     background-repeat: no-repeat;
-    padding-bottom: 13px;
+    /* padding-bottom: 13px; */
 }
 
 .botonNavLogin {

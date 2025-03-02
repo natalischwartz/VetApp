@@ -57,7 +57,7 @@ const Navbar = () => {
             <div className="logo-container">
             <NavLink to="/" className="nav-link nav-item huellitas">
                         <img src="../images/paw.svg" alt="" className="logo" />
-                        <h3 className="texto-huellitas">Huellitas</h3>
+                        <h3 className="texto-huellitas">PawClinic</h3>
                 </NavLink>
             </div>
 

@@ -21,7 +21,7 @@ const QuienesSomos = () => {
             <Carousel.Caption>
 
               <div className="txt">
-                <h1>Somos Huellitas</h1>
+                <h1>Somos PawClinic</h1>
                 <p className='txt-carousel'>
                 Una clínica veterinaria con atención integral para tu mascota.
                 Desde 2019 contamos con el servicio de <b>Historia Clínica Digital</b> , permitiéndote acceder a todos los registros de consultas en un solo lugar.

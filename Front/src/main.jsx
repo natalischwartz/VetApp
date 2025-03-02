@@ -6,6 +6,8 @@ import App from "./App.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Inicio from "./Components/Publico/Inicio.jsx";
 import QuienesSomos from "./Components/Publico/QuienesSomos.jsx";
+import Adopciones from "./Components/Adopciones/Adopciones.jsx";
+import Consultas from "./Components/Publico/Consultas.jsx";
 import Login from "./Components/AuthUsuarios/Login.jsx";
 import Registro from "./Components/AuthUsuarios/Registro.jsx";
 
@@ -22,8 +24,8 @@ createRoot(document.getElementById("root")).render(
            <Route path="/" element={<App />}>
               <Route index element={<Inicio/>}/>  {/* Página principal */}
               <Route path="/QuienesSomos" element={<QuienesSomos/>}/>
-              {/* <Route path="/adopciones" element={<Adopciones/>}/>
-              <Route path="/consultas" element={<Consultas/>}/>  */}
+              <Route path="/adopciones" element={<Adopciones/>}/>
+              <Route path="/consultas" element={<Consultas/>}/>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Registro/>}/>
           </Route> 
