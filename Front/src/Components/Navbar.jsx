@@ -3,11 +3,7 @@ import "./Navbar.css";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../firebaseConfig/AuthProvider.jsx";
 
-
-const closeMenu = () => setIsOpen(false);
-
-
-const LogInLinks = () =>{
+const LogInLinks = ({closeMenu}) =>{
     const User = useContext(AuthContext);
     const user = User.currentUser
     const uid =user?.uid
@@ -40,12 +36,12 @@ const LogInLinks = () =>{
     }else{
         return (
             <>
-                <NavLink to={`/misMascotas/${uid}`} className="nav-link nav-item" onClick={closeMenu}>Mis Mascotas</NavLink>
-                <NavLink to="/turnos" className="nav-link nav-item" onClick={closeMenu}>Turnos</NavLink>      
-                <NavLink to="/signOut" className="nav-link nav-item" onClick={closeMenu}>
+                <NavLink to={`/misMascotas/${uid}`} className="nav-link nav-item">Mis Mascotas</NavLink>
+                <NavLink to="/turnos" className="nav-link nav-item">Turnos</NavLink>      
+                <NavLink to="/signOut" className="nav-link nav-item">
                     <button id="botonCerrarSesion" className="botonNavLogin">Cerrar Sesión</button>
                 </NavLink>
-                <NavLink to={`/perfil/${uid}`} className="nav-link nav-item" onClick={closeMenu}></NavLink>
+                <NavLink to={`/perfil/${uid}`} className="nav-link nav-item"></NavLink>
             </>
         );
 
@@ -60,7 +56,8 @@ const Navbar = () => {
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
-    
+    const closeMenu = () => setIsOpen(false);
+
 
     return (
         <nav className="navbar  navbar-expand-sm">
