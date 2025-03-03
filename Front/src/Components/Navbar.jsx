@@ -3,6 +3,10 @@ import "./Navbar.css";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../firebaseConfig/AuthProvider.jsx";
 
+
+const closeMenu = () => setIsOpen(false);
+
+
 const LogInLinks = () =>{
     const User = useContext(AuthContext);
     const user = User.currentUser
@@ -13,10 +17,10 @@ const LogInLinks = () =>{
     if(!isUserLoggedIn){
         return (
             <>
-                <NavLink to="/login" className="nav-link nav-item">
+                <NavLink to="/login" className="nav-link nav-item" onClick={closeMenu}>
                     <button id="botonIngresar" className="botonNavNoLogin">Ingresar</button>
                 </NavLink>
-                <NavLink to="/register" className="nav-link nav-item">
+                <NavLink to="/register" className="nav-link nav-item" onClick={closeMenu}>
                     <button id="botonRegistrate" className="botonNavNoLogin">Registrate</button>
                 </NavLink>
             </>
@@ -25,9 +29,9 @@ const LogInLinks = () =>{
     }else if(isUserLoggedIn && user.email == import.meta.env.VITE_EMAIL){
         return (
             <>
-                <NavLink to="/clientes" className="nav-link nav-item">Clientes</NavLink>
-                <NavLink to="/turnos" className="nav-link nav-item">Turnos</NavLink>
-                <NavLink to="/signOut" className="nav-link nav-item">
+                <NavLink to="/clientes" className="nav-link nav-item" onClick={closeMenu}>Clientes</NavLink>
+                <NavLink to="/turnos" className="nav-link nav-item" onClick={closeMenu}>Turnos</NavLink>
+                <NavLink to="/signOut" className="nav-link nav-item" onClick={closeMenu}>
                     <button id="botonCerrarSesion" className="botonNavLogin">Cerrar Sesión</button>
                 </NavLink>
             </>
@@ -36,12 +40,12 @@ const LogInLinks = () =>{
     }else{
         return (
             <>
-                <NavLink to={`/misMascotas/${uid}`} className="nav-link nav-item">Mis Mascotas</NavLink>
-                <NavLink to="/turnos" className="nav-link nav-item">Turnos</NavLink>      
-                <NavLink to="/signOut" className="nav-link nav-item">
+                <NavLink to={`/misMascotas/${uid}`} className="nav-link nav-item" onClick={closeMenu}>Mis Mascotas</NavLink>
+                <NavLink to="/turnos" className="nav-link nav-item" onClick={closeMenu}>Turnos</NavLink>      
+                <NavLink to="/signOut" className="nav-link nav-item" onClick={closeMenu}>
                     <button id="botonCerrarSesion" className="botonNavLogin">Cerrar Sesión</button>
                 </NavLink>
-                <NavLink to={`/perfil/${uid}`} className="nav-link nav-item"></NavLink>
+                <NavLink to={`/perfil/${uid}`} className="nav-link nav-item" onClick={closeMenu}></NavLink>
             </>
         );
 
@@ -51,6 +55,13 @@ const LogInLinks = () =>{
 
 
 const Navbar = () => {
+
+    const [isOpen,setIsOpen] = useState(false)
+
+    const toggleMenu = () => setIsOpen(!isOpen);
+
+    
+
     return (
         <nav className="navbar  navbar-expand-sm">
             {/* Logo */}
@@ -63,24 +74,25 @@ const Navbar = () => {
 
             {/* Botón del menú hamburguesa */}
             <button 
+                onClick={toggleMenu}
                 className="navbar-toggler" 
                 type="button" 
                 data-bs-toggle="collapse" 
                 data-bs-target="#navbarNav"
                 aria-controls="navbarNav"
-                aria-expanded="false"
+                aria-expanded={isOpen ? 'true' : 'false'}
                 aria-label="Toggle navigation"
             >
                 <span className="navbar-toggler-icon"></span>
             </button>
 
              {/* Links de navegación */}
-            <div className="nav-link-section collapse navbar-collapse" id="navbarNav">
-                <NavLink to="/quienesSomos" className="nav-link nav-item">Quiénes Somos</NavLink>
-                <NavLink to="/adopciones" className="nav-link nav-item">Adopciones</NavLink>
+            <div className={`nav-link-section collapse navbar-collapse ${isOpen ? 'show' : ''}`} id="navbarNav">
+                <NavLink to="/quienesSomos" className="nav-link nav-item" onClick={closeMenu} >Quiénes Somos</NavLink>
+                <NavLink to="/adopciones" className="nav-link nav-item" onClick={closeMenu} >Adopciones</NavLink>
                 {/* <Link to="/" className="nav-link nav-item">Inicio</Link> */}
-                <NavLink to="/consultas" className="nav-link nav-item">Consultas</NavLink>
-                <LogInLinks></LogInLinks>
+                <NavLink to="/consultas" className="nav-link nav-item" onClick={closeMenu} >Consultas</NavLink>
+                <LogInLinks closeMenu={closeMenu}></LogInLinks>
                 <a href="https://www.instagram.com/" target="_blank" style={{ color: "black", paddingRight: "10px" }}></a>
                 <a href="https://es-la.facebook.com/" target="_blank" style={{ color: "black", paddingRight: "10px" }}></a>
             </div>
