@@ -10,6 +10,7 @@ import Adopciones from "./Components/Adopciones/Adopciones.jsx";
 import Consultas from "./Components/Publico/Consultas.jsx";
 import Login from "./Components/AuthUsuarios/Login.jsx";
 import Registro from "./Components/AuthUsuarios/Registro.jsx";
+import Clientes from './Components/Admin/Clientes.jsx';
 
 
 import "./index.css";
@@ -28,6 +29,8 @@ createRoot(document.getElementById("root")).render(
               <Route path="/consultas" element={<Consultas/>}/>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Registro/>}/>
+              <Route path="/clientes" element={<Clientes/>}/>
+
           </Route> 
         </Routes>
       </AuthProvider>

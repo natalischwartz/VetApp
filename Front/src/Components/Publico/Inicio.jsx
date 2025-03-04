@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 import "./Inicio.css";
+import { AuthContext } from "../../firebaseConfig/AuthProvider.jsx"
+import { useContext } from "react";
 
 const Inicio = () => {
+
+  const User = useContext(AuthContext);
+  const user = User.currentUser
+
+
   return (
     <>
       <div className="div_img_inicio">
@@ -15,10 +22,10 @@ const Inicio = () => {
             </p>
 
             <div>
-              <Link>
-                <button id="btn-consulta-inicio">Agendar Turno</button>
-              </Link>
-            </div>
+            <Link to={user !== null ?"/turnos":"/login"}>
+              <button id="btn-consulta-inicio">Agendar Turno</button>
+            </Link>
+          </div>
           </div>
         </div>
       </div>

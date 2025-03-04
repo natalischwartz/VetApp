@@ -1,5 +1,5 @@
 .div_img_inicio{
-    background-image: linear-gradient(to top right, rgba(63, 62, 62, 0.8) 4%, rgba(63, 62, 62, 0) 107%), url(/public/images/hero-2.jpg);
+    background-image: linear-gradient(to top right, rgba(63, 62, 62, 0.8) 4%, rgba(63, 62, 62, 0) 107%), url(/images/hero-2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 10% 45%;
