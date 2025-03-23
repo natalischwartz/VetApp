@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import "./Adopciones.css";
-import { useState, useEffect, useContext } from "react";
-import { collection, getDocs, doc, deleteDoc } from "firebase/firestore";
+import { useState, useEffect} from "react";
+import { collection, getDocs} from "firebase/firestore";
 import { db } from "../../firebaseConfig/firebase.js";
 import {
   FadeLoader
 } from 'react-spinners'
+
+
 
 const Adopciones = () => {
   const [loading, setLoading] = useState(true);
@@ -16,7 +18,7 @@ const Adopciones = () => {
 
   const getAdopciones = async () => {
     const data = await getDocs(adopcionesCollection);
-    // console.log(data.docs); 
+    console.log(data.docs); 
     setAdopciones(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     setLoading(false)
   };
@@ -34,6 +36,7 @@ const Adopciones = () => {
         </div>)
 }
 
+console.log(adopciones);
 
   return (
     <>
@@ -63,7 +66,7 @@ const Adopciones = () => {
           {adopciones.map((adopcion) => (
             <div className="tarjeta_adopciones" key={adopcion.id}>
               <div className="tarjeta_adopciones_cuerpo">
-                  <img className="img-responsive" src={`${adopcion.Foto}`} alt=""/>
+                  <img className="img-responsive" src={adopcion.Foto} alt=""/>
               </div>
               <div className="tarjeta_adopciones_titulo">{adopcion.Nombre}</div>
               <div className="tarjeta_adopciones_pie">
@@ -83,13 +86,13 @@ const Adopciones = () => {
         )} */}
 
         
-          {/* <Link to={"/formulario"}> */}
+          <Link to={"/formulario"}>
           <div className="text-center mb-2">
             <button className="botones_adoptar" id="form_adop2">
                 ¡Quiero adoptar!
                 </button>
             </div>
-          {/* </Link> */}
+          </Link>
      
       </div>
     </>

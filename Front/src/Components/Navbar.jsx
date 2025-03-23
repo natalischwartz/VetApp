@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../firebaseConfig/AuthProvider.jsx";
+import { PiPawPrintLight } from "react-icons/pi";
 
 const LogInLinks = ({closeMenu}) =>{
     const User = useContext(AuthContext);
@@ -64,9 +65,9 @@ const Navbar = () => {
             {/* Logo */}
             <div className="logo-container">
             <NavLink to="/" className="nav-link nav-item huellitas">
-                        <img src="../images/paw.svg" alt="" className="logo" />
-                        <h3 className="texto-huellitas">PawClinic</h3>
-                </NavLink>
+                <PiPawPrintLight className="logo"/>
+                <h3 className="texto-huellitas">PawClinic</h3>
+            </NavLink>
             </div>
 
             {/* Botón del menú hamburguesa */}

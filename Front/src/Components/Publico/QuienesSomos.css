@@ -1,46 +1,82 @@
-
-.oscurecer {
-    filter: brightness(55%);
-    width: 100%;
-    height: 500px;
+.carousel-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid brown;
+    height: 54vh;
 }
 
-.img-fluid {
-    width: 100%;
-    height: 488px;
+.carousel-item{
+    width:100%;
+    margin-right:0;
+}
+
+.active{
+   text-decoration: none;
+}
+
+.carousel-item .active {
+    display: block;
+}
+
+.carousel-content{
+    width: 82w;
+    height: 60vh;
+    border: 1px solid blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.carousel-img{
+   width: 500px;
+    border: 2px solid red;
+    /* max-width: 800px;
+    margin: auto; */
+   
+}
+
+.carousel-img img{
     object-fit: cover;
-    object-position: center center;
+    width: 217px;
+    height:131px;
+    clip-path: circle(50%);
 }
 
-/* .carousel-indicators{
-    bottom: 18%;
-} */
+.carousel-text{
+    /* display: flex;
+    flex-direction: column; */
+    border: 1px solid green;
+    height: 200px;
+    width: 153px; 
+}
+
+.carousel-text h1{
+    font-size: var(--font-small);
+}
+
+.txt-carousel{
+    font-family: var(--base-font);
+    font-size: 12px;
+    padding: 0 10px;
+}
+
+/* 
+  .txt-carousel {
+    font-size: clamp(16px, var(--font-medium), var(--font-large));
+    font-family: var(--base-font);
+  } */
+
+
+
 
 .carousel-control-next-icon, .carousel-control-prev-icon {
     position: absolute;
     bottom: 60%;
 }
 
-.carousel-item{
-    position: relative;
-}
 
-.carousel-caption {
-    position: absolute;
-    bottom: 3%;
-}
-
-.txt{
-    font-size: var(--font-small);
-    font-family: var(--alternative-font);
-    color: var(--light-font-solid);
-    font-weight: normal;
-}
-
-.txt-carousel{
-    font-size: clamp(16px,var(--font-medium),20px);
-    line-height: 2.5rem;
-}
 
 .logo{
     height: 35px;

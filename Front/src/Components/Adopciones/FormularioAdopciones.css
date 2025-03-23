@@ -1,0 +1,54 @@
+#wrapper_componente_form_adopciones h1 {
+    font-size: clamp(var(--font-medium), var(--font-large), 30px);
+    text-align: center;
+}
+
+.form-label{
+    /* margin-bottom: var(--spacing-20); */
+    font-size: clamp(16px, 2vw,24px);
+    color: var(--dark-900);
+}
+
+span{
+    font-size: 12px;
+}
+
+.form-input{
+    width: 100%;
+    border-radius: 10px;
+    font-size: var(--font-medium);
+    display: block;
+    height: 40px;
+    padding: 5px 5px 5px 10px;
+    border-color: var(--dark-500);
+    margin-bottom: 10px;
+}
+
+.container_botones{
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-20);
+}
+
+.btn-enviar,
+.btn-volver {
+    font-size: clamp(var(--font-xsmall), var(--font-small), var(--font-medium));
+    width: 80px;
+    height: 40px;
+    color: var(--primary-solid);
+    border-radius: 30px;
+    border: 3px solid var(--primary-solid);
+    background-color: white;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-weight: bold;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.btn-enviar:hover,
+.btn-volver:hover{
+    background-color: var(--primary-solid);
+    color: var(--light-bg-solid);
+}

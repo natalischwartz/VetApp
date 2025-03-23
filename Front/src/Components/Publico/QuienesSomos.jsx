@@ -7,73 +7,60 @@ const QuienesSomos = () => {
 
 
   return (
-    <div className='container-fluid'>
-      <div>
-        <Carousel variant="light">
+    <div className=''>
+        <Carousel variant="light" className='carousel-container container'>
           <Carousel.Item>
-            <div className="oscurecer">
-              <img
-                className="img-fluid"
-                src="/images/slide-1.jpg"
-                alt="Responsive image"
-              />
-              </div>
-            <Carousel.Caption>
 
-              <div className="txt">
+            <div className="carousel-content">
+              <div className="carousel-img" >
+                <img  src="/images/slide-1.jpg" alt="Responsive image" />
+              </div>
+              
+              <div className="carousel-text">
                 <h1>Somos PawClinic</h1>
-                <p className='txt-carousel'>
-                Una clínica veterinaria con atención integral para tu mascota.
-                Desde 2019 contamos con el servicio de <b>Historia Clínica Digital</b> , permitiéndote acceder a todos los registros de consultas en un solo lugar.
-                </p>
-              </div>
-
-
-            </Carousel.Caption>
+                <p className="txt-carousel">
+                 Una clínica veterinaria con atención integral para tu mascota.
+                Desde 2019 contamos con el servicio de <b>Historia Clínica Digital</b>, permitiéndote acceder a todos los registros de consultas en un solo lugar.
+              </p>
+            </div>
+          </div>
           </Carousel.Item>
-          <Carousel.Item>
-            <div className="oscurecer">
-              <img
-                className="img-fluid"
-                src="/images/slide-2.jpg"
-                alt="Responsive image"
-              />
-              </div>
 
-            <Carousel.Caption>
-              <div className="txt">
-                <p className='txt-carousel'>
+          <Carousel.Item>
+            <div className="carousel-content">
+              <div className="carousel-img">
+                <img  src="/images/slide-2.jpg" alt="Responsive image" />
+              </div>
+             
+              <div className="carousel-text">
+                <p className="txt-carousel">
                 Disponemos de un equipo de profesionales altamente calificados y tecnología de vanguardia.
                 Sabemos que la tecnología es fundamental para el crecimiento de las
                 instituciones médicas y es una de nuestras
                 fortalezas.
-                </p>
-              </div>
-
-            </Carousel.Caption>
+              </p>
+            </div>
+          </div>
           </Carousel.Item>
 
           <Carousel.Item>
-            <div className="oscurecer">
-              <img
-                className="img-fluid"
-                src="/images/slide-3.jpg"
-                alt="Responsive image"
-              />
+            <div className="carousel-content">
+              <div className="carousel-img">
+                <img  src="/images/slide-3.jpg" alt="Responsive image" />
               </div>
-            <Carousel.Caption>
-              <div className="txt">
-                <p className='txt-carousel'>Nuestras especialidades son:
+              
+              <div className="carousel-text">
+                <p className="txt-carousel">
+                Nuestras especialidades son:
                 Clínica Médica / Nutrición / Cirugía General
                 Diagnóstico por imágenes / Laboratorio
                 Oncologia / Vacunación
-                </p>
-              
-              </div>
-            </Carousel.Caption>
+              </p>
+            </div>
+          </div>
           </Carousel.Item>
         </Carousel>
-      </div>
+      
 
       <div className='container'>
         <h3 className="section-title">

@@ -7,10 +7,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Inicio from "./Components/Publico/Inicio.jsx";
 import QuienesSomos from "./Components/Publico/QuienesSomos.jsx";
 import Adopciones from "./Components/Adopciones/Adopciones.jsx";
+import FormularioAdopciones from "./Components/Adopciones/FormularioAdopciones.jsx";
+import Adopcion from "./Components/Adopciones/Adopcion.jsx";
 import Consultas from "./Components/Publico/Consultas.jsx";
 import Login from "./Components/AuthUsuarios/Login.jsx";
 import Registro from "./Components/AuthUsuarios/Registro.jsx";
 import Clientes from './Components/Admin/Clientes.jsx';
+import MisMascotas from "./Components/Mascotas/MisMascotas.jsx";
+import HistoriaClinica from "./Components/Mascotas/HistoriaClinica.jsx";
+import SignOut from './Components/AuthUsuarios/SignOut.jsx';
 
 
 import "./index.css";
@@ -26,10 +31,16 @@ createRoot(document.getElementById("root")).render(
               <Route index element={<Inicio/>}/>  {/* Página principal */}
               <Route path="/QuienesSomos" element={<QuienesSomos/>}/>
               <Route path="/adopciones" element={<Adopciones/>}/>
+              <Route path="/formulario" element={<FormularioAdopciones/>}/>
+              <Route path="/adopcion/:id" element={<Adopcion/>}/>
               <Route path="/consultas" element={<Consultas/>}/>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Registro/>}/>
               <Route path="/clientes" element={<Clientes/>}/>
+              <Route path="/misMascotas/:idUsuario" element={<MisMascotas/>}/>
+              <Route path="/historiaClinica/:idHistoria/:id" element={<HistoriaClinica/>}/>
+              <Route path="/signout" element={<SignOut/>}/>
+
 
           </Route> 
         </Routes>
