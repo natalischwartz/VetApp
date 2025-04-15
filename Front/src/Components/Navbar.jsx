@@ -37,9 +37,9 @@ const LogInLinks = ({closeMenu}) =>{
     }else{
         return (
             <>
-                <NavLink to={`/misMascotas/${uid}`} className="nav-link nav-item">Mis Mascotas</NavLink>
-                <NavLink to="/turnos" className="nav-link nav-item">Turnos</NavLink>      
-                <NavLink to="/signOut" className="nav-link nav-item">
+                <NavLink to={`/misMascotas/${uid}`} className="nav-link nav-item" onClick={closeMenu}>Mis Mascotas</NavLink>
+                <NavLink to="/turnos" className="nav-link nav-item" onClick={closeMenu}>Turnos</NavLink>      
+                <NavLink to="/signOut" className="nav-link nav-item"onClick={closeMenu} >
                     <button id="botonCerrarSesion" className="botonNavLogin">Cerrar Sesión</button>
                 </NavLink>
                 <NavLink to={`/perfil/${uid}`} className="nav-link nav-item"></NavLink>

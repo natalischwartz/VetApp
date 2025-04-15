@@ -47,7 +47,7 @@ const LogInLinks = ({ isUserLoggedIn, idUsuario, idMascota, getMascotas }) => {
         })
     }
 
-    if (isUserLoggedIn && user.email == 'admin@gmail.com') {
+    if (isUserLoggedIn && user.email == import.meta.env.VITE_EMAIL) {
         return (
             <>
                 <Link to={`/editarMascota/${idUsuario}/${idMascota}`} className="boton_editar btn btn-light">
@@ -69,23 +69,26 @@ const MisMascotas = () => {
     const uid = User.currentUser?.uid;
     const auth = getAuth()
     
-    const { idUsuario } = useParams();
+    const { idUsuario} = useParams();
     // console.log(idUsuario, "el id usuario es");
     
     let isUserLoggedIn = User.currentUser !== null;
-    const isAdmin = User.currentUser && User.currentUser.email === 'admin@gmail.com';
+    const isAdmin = User.currentUser && User.currentUser.email === import.meta.env.VITE_EMAIL;
 
+    // la función que obtiene las mascotas y, por cada mascota, también traiga su historia clínica:
     const getMascotas = async () => {
         const querySnapshot = await getDocs(collection(db, `/Clientes/${idUsuario}/Mascotas`));
 
-        console.log(querySnapshot,"lo que devuelve qs");
+        // console.log(querySnapshot,"lo que devuelve qs");
       
         if (querySnapshot.size !== 0) {
             console.log(querySnapshot.docs.map(doc => doc.data()))
             setMascotas(querySnapshot.docs.map(doc => { return { id: doc.id, ...doc.data() } }));
         }
+        
         setLoading(false)
     }
+
 
    
 
@@ -105,7 +108,7 @@ const MisMascotas = () => {
 
     return (
         <>
-        <div className="container_mascotas">
+        <div className="container_mascotas container">
             <h1 className="titulo_misMascotas">Mis Mascotas</h1>
             <div className="Listado_Container">
                 {mascotas.length>0 ? mascotas.map((mascota) =>(
@@ -155,7 +158,7 @@ const MisMascotas = () => {
                 }
             </div>
 
-            {isAdmin && (
+            {isUserLoggedIn && (
                 <Link to={`/crear/${idUsuario}`}>
                     <button id="boton-administrador">Agregar nueva mascota</button>
                 </Link>

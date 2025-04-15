@@ -14,12 +14,14 @@ import Login from "./Components/AuthUsuarios/Login.jsx";
 import Registro from "./Components/AuthUsuarios/Registro.jsx";
 import Clientes from './Components/Admin/Clientes.jsx';
 import MisMascotas from "./Components/Mascotas/MisMascotas.jsx";
+import AgregarMascota from "./Components/Mascotas/AgregarMascota.jsx";
 import HistoriaClinica from "./Components/Mascotas/HistoriaClinica.jsx";
 import SignOut from './Components/AuthUsuarios/SignOut.jsx';
 
 
 import "./index.css";
 import { AuthProvider } from "./firebaseConfig/AuthProvider.jsx";
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -38,7 +40,8 @@ createRoot(document.getElementById("root")).render(
               <Route path="/register" element={<Registro/>}/>
               <Route path="/clientes" element={<Clientes/>}/>
               <Route path="/misMascotas/:idUsuario" element={<MisMascotas/>}/>
-              <Route path="/historiaClinica/:idHistoria/:id" element={<HistoriaClinica/>}/>
+              <Route path="/crear/:idUsuario" element={<AgregarMascota/>}/>
+              <Route path="/historiaClinica/:idUsuario/:id" element={<HistoriaClinica/>}/>
               <Route path="/signout" element={<SignOut/>}/>
 
 

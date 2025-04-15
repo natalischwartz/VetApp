@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",  // <-- Esto es clave para que funcionen los alias
+      "paths": {
+        "@/*": ["./src/*"]  // <-- Permite importar como `@/components/...`
+      }
+    },
+    "include": ["src"]  // <-- Asegúrate de incluir tu carpeta principal
+  }

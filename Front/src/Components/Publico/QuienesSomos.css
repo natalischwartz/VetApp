@@ -1,79 +1,69 @@
-.carousel-inner{
+.shape-outside-container {
+    font-family: var(--base-font);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    border: 1px solid brown;
-    height: 54vh;
-}
+    gap: 20px;
+    text-decoration: none;
+  }
 
-.carousel-item{
-    width:100%;
-    margin-right:0;
-}
+  .shape-outside-container h1 {
+    margin: var(--spacing-28) 0;
+    font-size: var(--font-large);
+    font-weight: bold;
+    font-family: var(--base-font);
+    text-align: center;
+    text-decoration: none;
+  }
 
-.active{
-   text-decoration: none;
-}
+  .shape-content {
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 0;
+  }
 
-.carousel-item .active {
-    display: block;
-}
-
-.carousel-content{
-    width: 82w;
-    height: 60vh;
-    border: 1px solid blueviolet;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.carousel-img{
-   width: 500px;
-    border: 2px solid red;
-    /* max-width: 800px;
-    margin: auto; */
-   
-}
-
-.carousel-img img{
-    object-fit: cover;
-    width: 217px;
-    height:131px;
-    clip-path: circle(50%);
-}
-
-.carousel-text{
-    /* display: flex;
-    flex-direction: column; */
-    border: 1px solid green;
+.circle-shape {
+    width: 200px;
     height: 200px;
-    width: 153px; 
-}
+    border-radius: 50%;
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin-right: 14px;
+    shape-outside: circle(50%);
+    margin-bottom: 15px;
+    background-position: center center; /* Aquí centrás la imagen */
+    background-size: cover; /* Esto hace que se ajuste bien */
+  }
 
-.carousel-text h1{
-    font-size: var(--font-small);
-}
+  .circle-one{
+    background-image: url(/images/slide-1.jpg);
+  }
 
-.txt-carousel{
-    font-family: var(--base-font);
-    font-size: 12px;
-    padding: 0 10px;
-}
+  .circle-two{
+    background-image: url(/images/slide-2.jpg);
+  }
 
-/* 
+  .circle-three{
+    background-image: url(/images/slide-3.jpg);
+  }
+
+
   .txt-carousel {
-    font-size: clamp(16px, var(--font-medium), var(--font-large));
+    font-size: 15px;
     font-family: var(--base-font);
-  } */
+    padding: 59px 0;
+  }
 
-
+.carousel-control-prev , .carousel-control-next{
+    opacity:none;
+}  
 
 
 .carousel-control-next-icon, .carousel-control-prev-icon {
     position: absolute;
     bottom: 60%;
+    background-color:var(--primary-solid);
 }
 
 
@@ -111,16 +101,15 @@
     max-width: 250px;
     height: 340px;
 }
-
-
+ 
 .card {
-    /* display: block; */
+    display: block;
     width: 200px;
     height: 340px;
     border: 1px solid lightgray;
     box-shadow: 2px 2px 8px 4px #d3d3d3d4;
     transition: transform 0.3s ease-in-out;
-}
+} 
 
 .card:hover{
     transform: translateY(-10px);
@@ -135,4 +124,27 @@
 
 .card-body{
     padding: var(--spacing-16);
-}
+} 
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .circle-shape {
+      width: 150px;
+      height: 150px;
+    }
+    
+    .shape-title {
+      font-size: 2rem;
+    }
+    
+    .shape-text {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (min-width:768px){
+    .circle-shape{
+        width: 300px;
+        height: 300px;
+    }
+  }
