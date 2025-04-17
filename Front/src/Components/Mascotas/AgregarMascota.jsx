@@ -5,8 +5,8 @@ import './HistoriaClinica.css'
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { PawPrint, ArrowLeft } from "lucide-react";
 import { Card,CardContent,CardHeader,CardTitle } from "@/Components/ui/card.jsx";
-import { Input } from "@/components/ui/input.jsx";
-import { Select, SelectContent, SelectGroup,SelectItem,SelectTrigger,SelectValue } from "@/components/ui/select.jsx"; 
+import { Input } from "@/Components/ui/input.jsx";
+import { Select, SelectContent, SelectGroup,SelectItem,SelectTrigger,SelectValue } from "@/Components/ui/select.jsx"; 
 import { Button } from "@/Components/ui/button.jsx";
 import { collection, addDoc } from "firebase/firestore"
 import { db } from "../../firebaseConfig/firebase.js"
