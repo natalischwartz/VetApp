@@ -4,10 +4,10 @@ import { useState, useContext } from "react";
 import './HistoriaClinica.css'
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { PawPrint, ArrowLeft } from "lucide-react";
-import { Card,CardContent,CardHeader,CardTitle } from "@/components/ui/card.jsx";
+import { Card,CardContent,CardHeader,CardTitle } from "@/Components/ui/card.jsx";
 import { Input } from "@/components/ui/input.jsx";
 import { Select, SelectContent, SelectGroup,SelectItem,SelectTrigger,SelectValue } from "@/components/ui/select.jsx"; 
-import { Button } from "@/components/ui/button.jsx";
+import { Button } from "@/Components/ui/button.jsx";
 import { collection, addDoc } from "firebase/firestore"
 import { db } from "../../firebaseConfig/firebase.js"
 import { AuthContext } from "../../firebaseConfig/AuthProvider.jsx"

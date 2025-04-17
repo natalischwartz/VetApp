@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect, useContext } from "react";
 import "./HistoriaClinica.css";
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
-import {Button} from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/Components/ui/card";
+import {Button} from "@/Components/ui/button";
 import { CalendarDays, Stethoscope, Trash2 , PlusCircle, Loader2,Pencil,FileSearch,ArrowLeft} from "lucide-react";
 import { AuthContext } from "../../firebaseConfig/AuthProvider";
 import { db } from "../../firebaseConfig/firebase";
