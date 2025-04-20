@@ -48,7 +48,7 @@ body {
     display: block;
     height: 40px;
     padding: 5px 5px 5px 10px;
-    border-color: var(--dark-500);
+    border: 1px solid var(--dark-500) !important;
     margin-bottom: 10px;
 
 }

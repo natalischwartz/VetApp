@@ -13,6 +13,7 @@ import Consultas from "./Components/Publico/Consultas.jsx";
 import Login from "./Components/AuthUsuarios/Login.jsx";
 import Registro from "./Components/AuthUsuarios/Registro.jsx";
 import Clientes from './Components/Admin/Clientes.jsx';
+import EditarPerfil from './Components/Admin/EditarPerfil.jsx';
 import MisMascotas from "./Components/Mascotas/MisMascotas.jsx";
 import AgregarMascota from "./Components/Mascotas/AgregarMascota.jsx";
 import HistoriaClinica from "./Components/Mascotas/HistoriaClinica.jsx";
@@ -39,6 +40,7 @@ createRoot(document.getElementById("root")).render(
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Registro/>}/>
               <Route path="/clientes" element={<Clientes/>}/>
+              <Route path="/editarPerfil/:id" element={<EditarPerfil/>}/>
               <Route path="/misMascotas/:idUsuario" element={<MisMascotas/>}/>
               <Route path="/crear/:idUsuario" element={<AgregarMascota/>}/>
               <Route path="/historiaClinica/:idUsuario/:id" element={<HistoriaClinica/>}/>

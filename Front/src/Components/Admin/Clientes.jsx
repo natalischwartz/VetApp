@@ -1,18 +1,21 @@
-import { useState, useEffect, useContext } from "react"
-import { Link } from "react-router-dom"
-import { collection, getDocs, deleteDoc, doc } from "firebase/firestore"
+import { Edit, Trash2, Eye} from 'lucide-react';
+import { Table,TableBody,TableCell,TableHead,TableHeader,TableRow } from '@/Components/ui/table';
+import { Button } from '@/Components/ui/button.jsx';
+import { Card,CardContent,CardHeader,CardTitle } from '@/Components/ui/card';
+
+import { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { AuthContext } from "../../firebaseConfig/AuthProvider.jsx";
 import { db } from "../../firebaseConfig/firebase.js";
-import Swal from "sweetalert2"
-import withReactContent from "sweetalert2-react-content"
-import Table from 'react-bootstrap/Table';
-import "./Clientes.css"
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 import {
     FadeLoader
 } from 'react-spinners';
+import '../Mascotas/HistoriaClinica.css';
 
-
-const mySwal = withReactContent(Swal)
+const mySwal = withReactContent(Swal);
 
 const LogInLinks = ({ id, getClientes }) => {
     
@@ -51,19 +54,23 @@ const LogInLinks = ({ id, getClientes }) => {
     if (isUserLoggedIn && user.email == import.meta.env.VITE_EMAIL) {
         return (
             <>
+             <TableCell className="text-right space-x-2">
                 <Link to={`/editarPerfil/${id}`}>
-                    <button className="boton_editar btn btn-primary"><i className="fa-solid fa-pencil"></i></button>
+                    <Button variant="ghost" size="icon" className="hover:bg-blue-50 text-blue-600"
+                    >
+                        <Edit className='h-4 w-4'/>
+                    </Button>
                 </Link>
-                <button onClick={() => { confirmDelete() }} className="boton_borrar btn btn-danger">
-                    <i className="fa-solid fa-trash"></i>
-                </button>
+                <Button onClick={()=>{confirmDelete()}} variant="ghost" size="icon" className="hover:bg-red-50 text-red-600">
+                    <Trash2 className='h-4 w-4'/>
+                </Button>
+            </TableCell> 
             </>
         );
     }
 }
 
-
-const Clientes = () => {
+const Clientes = () =>{
     const [loading, setLoading] = useState(true);
 
 
@@ -91,44 +98,54 @@ const Clientes = () => {
             </div>)
     }
 
-    return (
 
-        <>
-            <div className="container">
-                <h1 className="titulo_pagina">Clientes</h1>
-                <Table striped>
-                    <thead>
-                        <tr>
-                            {/* <th>Id</th> */}
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Email</th>
-                            <th>Mascotas</th>
-                            <th></th>
-                        </tr>
-                    </thead>
+    return(
+        <div className="container mx-auto py-8 px-4">
+            <Card className="shadow-lg">
+                <CardHeader className="border-b bg-gray-50/80">
+                <CardTitle className="text-2xl font-bold text-gray-800">
+                    Clientes
+                </CardTitle>
+                
+                </CardHeader>
+                <CardContent className="p-0">
+                    <div className="overflow-x-auto">
+                        <Table>
+                            <TableHeader>
+                                <TableRow className="bg-gray-50/50">
+                                <TableHead className="font-semibold">Nombre</TableHead>
+                                <TableHead className="font-semibold">Apellido</TableHead>
+                                <TableHead className="font-semibold">Email</TableHead>
+                                <TableHead className="font-semibold">Mascotas</TableHead>
+                                <TableHead className="font-semibold">Acciones</TableHead>
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                                {clientes.map((cliente)=>(
+                                    <TableRow key={cliente.id} className="hover:bg-gray-50/50">
+                                        <TableCell>{cliente.Nombre}</TableCell>
+                                        <TableCell>{cliente.Apellido}</TableCell>
+                                        <TableCell>{cliente.Email}</TableCell>
+                                        <TableCell>
+                                            <Link to={`/misMascotas/${cliente.id}`}>
+                                                 <Button variant="outline" className="text-primary hover:text-primary hover:bg-primary/10">
+                                            Ver Mascotas
+                                            </Button>
+                                            </Link>
+                                        </TableCell>
+                                        <LogInLinks id={cliente.id} getClientes={getClientes}></LogInLinks>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </div>
+                </CardContent>
+            </Card>
+        </div>
+    );
 
-                    <tbody>
-                        {clientes.map((cliente) => (
-                            <tr key={cliente.id}>
-                                {/* <td>{cliente.id}</td> */}
-                                <td className="align-middle">{cliente.Nombre}</td>
-                                <td className="align-middle">{cliente.Apellido}</td>
-                                <td className="align-middle">{cliente.Email}</td>
-                                <td className="align-middle">
-                                    <Link to={`/misMascotas/${cliente.id}`}><button className="boton_ver_mascotas_btn btn-success">Ver Mascotas</button></Link>
-                                </td>
-                                <td className="align-middle">
-                                    <LogInLinks id={cliente.id} getClientes={getClientes}></LogInLinks>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </Table>
 
-            </div>
-        </>
-    )
 }
+
 
 export default Clientes;
