@@ -1,4 +1,15 @@
-Footer{
+footer{
     font-family: var(--alternative-font);
     color: var(--light-font-solid) !important;
+}
+
+.footer_logo,
+.footer_name{
+    font-size: var(--font-large) !important;
+}
+
+.footer_contact{
+    font-size: var(--font-medium) !important;
+    display: flex;
+    flex-direction: column;
 }
