@@ -1,71 +1,18 @@
-.shape-outside-container {
-    font-family: var(--base-font);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    text-decoration: none;
-  }
 
-  .shape-outside-container h1 {
+.title-h2 {
     margin: var(--spacing-28) 0;
-    font-size: var(--font-large);
-    font-weight: bold;
+    font-size: 15px;
     font-family: var(--base-font);
     text-align: center;
-    text-decoration: none;
-  }
-
-  .shape-content {
-    position: relative;
-    overflow: hidden;
-    padding: 1rem 0;
-  }
-
-.circle-shape {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    float: left;
-    width: 150px;
-    height: 150px;
-    margin-right: 14px;
-    shape-outside: circle(50%);
-    margin-bottom: 15px;
-    background-position: center center; /* Aquí centrás la imagen */
-    background-size: cover; /* Esto hace que se ajuste bien */
-  }
-
-  .circle-one{
-    background-image: url(/images/slide-1.jpg);
-  }
-
-  .circle-two{
-    background-image: url(/images/slide-2.jpg);
-  }
-
-  .circle-three{
-    background-image: url(/images/slide-3.jpg);
+   
   }
 
 
   .txt-carousel {
     font-size: 15px;
     font-family: var(--base-font);
-    padding: 59px 0;
+    color: var(--dark-solid);
   }
-
-.carousel-control-prev , .carousel-control-next{
-    opacity:none;
-}  
-
-
-.carousel-control-next-icon, .carousel-control-prev-icon {
-    position: absolute;
-    bottom: 60%;
-    background-color:var(--primary-solid);
-}
-
 
 
 .logo{
